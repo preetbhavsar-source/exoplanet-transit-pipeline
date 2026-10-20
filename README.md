@@ -1,1 +1,0 @@
-# exoplanet-transit-pipeline
