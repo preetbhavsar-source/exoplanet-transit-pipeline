@@ -83,6 +83,17 @@ try:
 
 print("Batch scan complete! Any candidate plots with Power > 12 are in 'candidate_plots'.")
  
-            
+DEBUGGING
 
+bad_ids = ['194258999', '380157588']
+df = df[~df['tic_id'].astype(str).str.contains('|'.join(bad_ids))]
 
+So this was placed there because there was an issue with the second TIC
+there was a valid search entry via NASA but there was nothing when it was downloaded
+it was empty and python kept throwing an attribute error, so after many other iterations and work arounds I just decided to remove it from the set
+
+if len(search_results) == 0: # checks for light curves and if there are any 
+
+This was placed because in an early variation I kept getting no results logged for some targets so It caused problems 
+
+These were the two main sources of error
