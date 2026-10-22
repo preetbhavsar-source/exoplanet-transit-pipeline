@@ -1,6 +1,6 @@
 After I ran the star scanner I found these samples. 
 
-[13/50] Processing TIC 306069926...
+[13/50] Processing TIC 306069926...                                             
    --> Found 10 data sets. Downloading first sector...                       
    --> NOISE: Period = 6.9750 d | Max Power = 3.16 (Below signal threshold)
 
@@ -206,3 +206,6 @@ After I ran the star scanner I found these samples.
    --> Candidate plot saved to candidate_plots/TIC_437752575_scan.png
 
 Batch scan complete! Any candidate plots with Power > 12 are in 'candidate_plots'.
+
+So we started from 10 because of targets_to_scan = df.iloc[10:60]
+this was done 
