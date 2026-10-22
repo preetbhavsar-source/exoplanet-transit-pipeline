@@ -208,4 +208,9 @@ After I ran the star scanner I found these samples.
 Batch scan complete! Any candidate plots with Power > 12 are in 'candidate_plots'.
 
 So we started from 10 because of targets_to_scan = df.iloc[10:60]
-this was done 
+
+<img width="1500" height="1200" alt="TIC_437752575_scan" src="https://github.com/user-attachments/assets/98e86516-0abd-4701-8444-4294239a2aa7" />
+
+
+
+
