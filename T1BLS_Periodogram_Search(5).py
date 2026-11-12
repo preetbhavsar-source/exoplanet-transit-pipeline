@@ -5,19 +5,19 @@ import pandas as pd
 import os
 import socket
 
-# Hard network timeout to keep processing fast
+# time out is 12 seconds for socket, so if servers take too long then it will timeout in 12 seconds and skip 
 socket.setdefaulttimeout(12)
 
 # 1. Load unstudied candidates catalog
 df = pd.read_csv("unstudied_candidates.csv")
-os.makedirs("candidate_plots", exist_ok=True)
+os.makedirs("candidate_plots", exist_ok=True) # makes a folder throught makedirs or make directories and won't overwrite or crash if it exists already
 
 # Filter out known bad/empty IDs
-bad_ids = ['194258999', '380157588']
-df = df[~df['tic_id'].astype(str).str.contains('|'.join(bad_ids))]
+bad_ids = ['194258999', '380157588'] # these are ids that kept casuing issues with the code because they couldn't be pulled out from the database proeperly
+df = df[~df['tic_id'].astype(str).str.contains('|'.join(bad_ids))] #just filters through the tics and joins the list of bad ids ~ flips in pandas so only keep false or good rows
 
 # 2. Select next batch of 50 unstudied targets to scan
-targets_to_scan = df.iloc[10:60]
+targets_to_scan = df.iloc[10:60] # i loc is integer location, isolates a batch of 50 stars, we skipped the first 10 as none had viable candidates
 
 print(f"Starting batch scan for {len(targets_to_scan)} unstudied targets...\n")
 
